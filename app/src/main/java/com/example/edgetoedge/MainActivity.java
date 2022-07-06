@@ -1,6 +1,7 @@
 package com.example.edgetoedge;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -34,12 +35,28 @@ public class MainActivity extends AppCompatActivity {
             windowInsetsController.show(WindowInsetsCompat.Type.systemBars());
         }
         isHidden=!isHidden;
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.transparent));
     }
+
+//    public void HideSystemBars(View view) {
+//        WindowInsetsCon
+//        trollerCompat windowInsetsController =
+//                ViewCompat.getWindowInsetsController(getWindow().getDecorView());
+//        if (windowInsetsController == null) {
+//            return;
+//        }
+//        // Configure the behavior of the hidden system bars
+//        windowInsetsController.setSystemBarsBehavior(
+//                WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_TOUCH
+//        );
+//        // Hide both the status bar and the navigation bar
+//        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
+//    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 }
